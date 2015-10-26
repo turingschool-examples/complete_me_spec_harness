@@ -1,6 +1,7 @@
 require "minitest"
 require "minitest/emoji"
 require "minitest/autorun"
+require "../../complete_me/lib/complete_me"
 
 class CompleteMeTest
   def test_inserts_single_word
