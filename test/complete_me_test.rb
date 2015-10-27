@@ -55,7 +55,7 @@ class CompleteMeTest < Minitest::Test
 
   def test_works_with_large_dataset
     cm.populate(large_word_list)
-    assert_equal ["doggerel" "doggereler" "doggerelism" "doggerelist" "doggerelize" "doggerelizer"], cm.suggest("doggerel")
+    assert_equal ["doggerel", "doggereler", "doggerelism", "doggerelist", "doggerelize", "doggerelizer"], cm.suggest("doggerel").sort
     cm.select("doggerel", "doggerelist")
     assert_equal "doggerelist", cm.suggest("doggerel").first
   end
@@ -69,6 +69,6 @@ class CompleteMeTest < Minitest::Test
   end
 
   def large_word_list
-    File.read("./test/medium.txt")
+    File.read("/usr/share/dict/words")
   end
 end
