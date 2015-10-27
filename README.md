@@ -42,8 +42,8 @@ Change directories into the `complete_me_spec_harness/` directory and then execu
 
 To load in dependencies for the spec harness.
 
-### Usage
+## Usage
 
 To test your implementation against the evaluation specs, run:
 
-    $ rake spec
+    $ rake test
