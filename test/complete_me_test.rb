@@ -3,7 +3,7 @@ require "minitest/emoji"
 require "minitest/autorun"
 require "../complete_me/lib/complete_me"
 
-class CompleteMeTest
+class CompleteMeTest < Minitest::Test
   attr_reader :cm
   def setup
     @cm = CompleteMe.new
