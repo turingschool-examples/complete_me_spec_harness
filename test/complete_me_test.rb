@@ -48,15 +48,15 @@ class CompleteMeTest
   end
 
   def test_selects_off_of_medium_dataset
+    cm.select("wi", "wizardly")
+    assert_equal ["wizardly", "williwaw"], cm.suggest("wi")
   end
 
-  def test_subsequent_suggestions_account_for_selections
-  end
-
-  def test_inserts_large_dataset
-  end
-
-  def test_integration_test_over_large_dataset
+  def test_works_with_large_dataset
+    cm.populate(large_word_list)
+    assert_equal ["doggerel" "doggereler" "doggerelism" "doggerelist" "doggerelize" "doggerelizer"], cm.suggest("doggerel")
+    cm.select("doggerel", "doggerelist")
+    assert_equal "doggerelist", cm.suggest("doggerel").first
   end
 
   def insert_words(words)
@@ -64,6 +64,10 @@ class CompleteMeTest
   end
 
   def medium_word_list
+    File.read("./test/medium.txt")
+  end
+
+  def large_word_list
     File.read("./test/medium.txt")
   end
 end
