@@ -36,13 +36,13 @@ as your `complete_me` project directory. It should be arranged like:
     | \complete_me_spec_harness/
     |
 
+## Usage
+
 Change directories into the `complete_me_spec_harness/` directory and then execute:
 
     $ bundle
 
 To load in dependencies for the spec harness.
-
-## Usage
 
 To test your implementation against the evaluation specs, run:
 
