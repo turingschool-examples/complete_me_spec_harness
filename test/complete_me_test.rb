@@ -44,10 +44,11 @@ class CompleteMeTest < Minitest::Test
 
   def test_suggests_off_of_medium_dataset
     cm.populate(medium_word_list)
-    assert_equal ["williwaw", "wizardly"], cm.suggest("wi")
+    assert_equal ["williwaw", "wizardly"], cm.suggest("wi").sort
   end
 
   def test_selects_off_of_medium_dataset
+    cm.populate(medium_word_list)
     cm.select("wi", "wizardly")
     assert_equal ["wizardly", "williwaw"], cm.suggest("wi")
   end
