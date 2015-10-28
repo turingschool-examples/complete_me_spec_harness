@@ -33,7 +33,7 @@ class CompleteMeTest < Minitest::Test
     assert_equal ["pizza"], cm.suggest("p")
     assert_equal ["pizza"], cm.suggest("piz")
     assert_equal ["zombies"], cm.suggest("zo")
-    assert_equal ["a", "aardvark"], cm.suggest("a")
+    assert_equal ["a", "aardvark"], cm.suggest("a").sort
     assert_equal ["aardvark"], cm.suggest("aa")
   end
 
